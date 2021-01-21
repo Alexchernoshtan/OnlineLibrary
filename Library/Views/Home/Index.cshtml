@@ -1,0 +1,27 @@
+﻿@model Library.Models.BookListViewModel
+
+@{
+    ViewBag.Title = "Favourite books";
+}
+<table class="table table-striped">
+    <tr>
+        <th></th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Category</th>
+    </tr>
+
+    @foreach (var item in Model.Books)
+    {
+        if (item.IsFavourite)
+        {
+<tr>
+    <td> <img class="img-thumbnail" src="~/Images/@item.Img" /> </td>
+    <td> <a href="~/Book/Book/@item.Id">@item.Name</a></td>
+    <td>@item.Desc</td>
+    <td>@item.Category.Name</td>
+</tr>
+        }
+
+    }
+</table>

@@ -1,0 +1,38 @@
+﻿@model Library.Models.BookListViewModel
+
+@{
+    ViewBag.Title = "List of Book";
+}
+
+<h2>List of books:</h2>
+
+<form method="get">
+    <div class="form-inline form-group">
+        <label class="control-label">Name: </label>
+        <input name="name" class="form-control" />
+
+        <label class="control-label">Category: </label>
+        <select name="category" asp-items="Model.Categories" class="form-control"></select>
+
+        <input type="submit" value="Select" class="btn btn-default" />
+    </div>
+</form>
+
+<table class="table-bordered ">
+    <tr>
+        <th>       </th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Category</th>
+    </tr>
+
+    @foreach (var item in Model.Books)
+    {
+        <tr>
+            <td> <img style="width:100%" class="img-rounded" src="~/Images/@item.Img" /> </td>
+            <td> <a href="~/Book/Book/@item.Id">@item.Name</a></td>
+            <td>@item.Desc</td>
+            <td>@item.Category.Name</td>
+        </tr>
+    }
+</table>

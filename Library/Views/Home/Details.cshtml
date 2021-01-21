@@ -1,0 +1,14 @@
+﻿@model Library.Models.Book
+@{
+    ViewBag.Title = Model.Name;
+}
+<h2>Book Name @Model.Name</h2>
+<div>
+    <dl class="dl-horizontal">
+        <dt>Id</dt>
+        <dd>@Model.Id</dd>
+
+        <dt>Description</dt>
+        <dd>@Model.Desc</dd>
+    </dl>
+</div>

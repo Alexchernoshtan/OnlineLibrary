@@ -1,0 +1,16 @@
+﻿@model Library.Models.Book
+@{ 
+    ViewBag.Title = Model.Name;
+}
+<h2>Book Name : @Model.Name</h2>
+<div>
+    <dl class="dl-horizontal">
+
+        <dt>Description</dt>
+        <dd>@Model.Desc</dd>
+        <dd><img class="img-thumbnail" src="~/Images/@Model.Img" /></dd>
+
+        <a href="~/Files/@Model.File">Download</a>
+
+    </dl>
+</div>

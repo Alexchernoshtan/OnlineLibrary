@@ -1,0 +1,20 @@
+﻿@model Library.Models.User
+@{
+    ViewBag.Title = "hi";
+}
+<h2>User setting </h2>
+<div>
+    <dl class="dl-horizontal">
+        <dt>Name</dt>
+        <dd>@Model.UserName</dd>
+
+        <dt>Email</dt>
+        <dd>@Model.Email</dd>
+
+        <dt>Password</dt>
+        <dd>@Model.PasswordHash</dd>
+
+        <dt>Phone</dt>
+        <dd>@Model.PhoneNumber</dd>
+    </dl>
+</div>
